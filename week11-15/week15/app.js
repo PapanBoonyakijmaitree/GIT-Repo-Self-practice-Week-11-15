@@ -124,4 +124,27 @@ document.addEventListener("DOMContentLoaded", () => {
         updateBtn.disabled=true;
     }
 
+    // Delete
+    tbody.addEventListener("contextmenu", e=>{
+        e.preventDefault();
+        const row = e.target.closest("tr");
+        if(!row) return;
+        const id = Number(row.cells[0].textContent);
+        const s = students.find(x=>x.id===id);
+        if(!s) return;
+
+        if(confirm(`Delete student ${s.name}?`)){
+            students = students.filter(x=>x.id!==id);
+            renderTable(students);
+        }
+    });
+
+    // Highlight row after add/edit
+    function highlightRow(id){
+        const row = [...tbody.rows].find(r => Number(r.cells[0].textContent) === id);
+        if(!row) return;
+        row.classList.add("highlight");
+        setTimeout(()=> row.classList.remove("highlight"), 1500);
+    }
+
 });

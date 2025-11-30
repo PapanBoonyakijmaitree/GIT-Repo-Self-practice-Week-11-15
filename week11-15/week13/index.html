@@ -18,6 +18,11 @@
       <button id="filterBtn">Apply Filter</button>
       <button id="resetFilter">Reset Filter</button>
       <button id="sortBtn">Sort by Name</button>
+
+      <label>Search Name: 
+        <input type="text" id="filterInput" placeholder="Search by name">
+      </label>
+
       <label>Timezone:
         <select id="tzSelect">
           <option value="Asia/Bangkok">Asia/Bangkok</option>
@@ -41,16 +46,10 @@
       <label>Name: <input type="text" id="studentName" required></label>
       <label>Age: <input type="number" id="studentAge" required></label>
       <label>Email: <input type="email" id="studentEmail" required></label>
-      <button type="submit" id="addBtn">Add Student</button>
+      <button type="button" id="addBtn">Add Student</button>
       <button type="button" id="updateBtn">Update Student</button>
       <button type="button" id="cancelEdit">Cancel</button>
     </form>
-
-    <dialog id="confirmDialog">
-      <p id="confirmText"></p>
-      <button id="confirmYes">Yes</button>
-      <button id="confirmNo">No</button>
-    </dialog>
   </section>
 
   <script defer src="app.js"></script>
