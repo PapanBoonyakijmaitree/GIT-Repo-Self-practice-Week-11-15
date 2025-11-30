@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Self Practice W11-15 – Student Management</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h1>Self Practice Week 11–15 – Student Management</h1>
+
+  <section id="week11-15">
+    <h2>Student List</h2>
+
+    <div class="controls">
+      <label>Filter Age ≥ 
+        <input type="number" id="ageFilter" min="0" placeholder="e.g., 18">
+      </label>
+      <button id="filterBtn">Apply Filter</button>
+      <button id="resetFilter">Reset Filter</button>
+      <button id="sortBtn">Sort by Name</button>
+      <label>Timezone:
+        <select id="tzSelect">
+          <option value="Asia/Bangkok">Asia/Bangkok</option>
+          <option value="Europe/London">Europe/London</option>
+          <option value="America/New_York">America/New_York</option>
+        </select>
+      </label>
+      <span>Current Time: <span id="currentTime"></span></span>
+    </div>
+
+    <table>
+      <thead>
+        <tr><th>ID</th><th>Name</th><th>Age</th><th>Email</th></tr>
+      </thead>
+      <tbody id="studentBody"></tbody>
+    </table>
+
+    <h3>Add / Edit Student</h3>
+    <form id="studentForm">
+      <input type="hidden" id="studentId">
+      <label>Name: <input type="text" id="studentName" required></label>
+      <label>Age: <input type="number" id="studentAge" required></label>
+      <label>Email: <input type="email" id="studentEmail" required></label>
+      <button type="submit" id="addBtn">Add Student</button>
+      <button type="button" id="updateBtn">Update Student</button>
+      <button type="button" id="cancelEdit">Cancel</button>
+    </form>
+
+    <dialog id="confirmDialog">
+      <p id="confirmText"></p>
+      <button id="confirmYes">Yes</button>
+      <button id="confirmNo">No</button>
+    </dialog>
+  </section>
+
+  <script defer src="app.js"></script>
+</body>
+</html>
